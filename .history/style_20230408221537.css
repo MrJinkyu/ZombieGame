@@ -16,19 +16,18 @@ body{
     height: 40rem;
     border: 0.5rem solid white;
     border-radius: 1rem;
-}
 
-.game__target{
-    position: absolute;
-    top: 50%;
-    left:50%;
 }
 
 .game__header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 40%;
+}
+
+.game__target{
+    position: absolute;
+    bottom: 5px;
 }
 
 .game__btn{
@@ -41,7 +40,7 @@ body{
     border-radius: 0.5rem;
     outline: none;
     opacity: 0.8;
-    transition: all 200ms ease-in;
+    transition: all 300ms ease-in;
 }
 
 .game__btn:hover{
@@ -69,7 +68,7 @@ body{
     font-size: 3rem;
     line-height: 4rem;
     border-radius: 50%;
-    background-color: darkorange;
+    background-color: darkblue;
     color: white;
     cursor: auto;
     user-select: none;
@@ -78,64 +77,6 @@ body{
 
 .game__field{
     width: 100%;
-    height: 60%;
-    position: relative;
+    height: 50%;
+    border: 1px solid red;
 }
-
-.zombie{
-    position: absolute;
-    font-size: 3rem;
-}
-
-#zombie1{
-    top: 60%;
-    left: 30%;
-}
-
-#zombie2{
-    top: 45%;
-    left: 60%;
-}
-
-#zombie3{
-    top: 20%;
-    left: 50%;
-}
-
-.pop-up{
-    width: 25rem;
-    height: 10rem;
-    background-color: #00000090;
-    text-align: center;
-    margin: 0 auto;
-    transform: translateY(-20rem);
-    display: none;
-}
-
-.pop-up.vidible{
-    display: block;
-}
-
-.pop-up__refresh{
-    width: 3rem;
-    height: 3rem;
-    margin-top: 2rem;
-    background-color: white;
-    color: darkorange;
-    border-radius: 50%;
-    border: 2px solid darkorange;
-    font-size: 1.5rem;
-    transition: all 200ms ease-in;
-}
-
-.pop-up__refresh:hover{
-    transform: rotate(360deg);
-}
-
-.pop-up__message{
-    margin-top: 0.5rem;
-    color: red;
-    font-size: 2rem;
-}
-
-

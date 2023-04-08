@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    background-color: black;
+}
+
+.game{
+    background: url('img/background.jpg') center/cover;
+    margin: 5rem auto;
+    width: 60rem;
+    height: 40rem;
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.game__target{
+    position: absolute;
+    bottom: 5px;
+}
+
+.game__btn{
+    margin-top: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+}
+

@@ -69,7 +69,7 @@ body{
     font-size: 3rem;
     line-height: 4rem;
     border-radius: 50%;
-    background-color: darkorange;
+    background-color: darkblue;
     color: white;
     cursor: auto;
     user-select: none;
@@ -110,10 +110,6 @@ body{
     margin: 0 auto;
     transform: translateY(-20rem);
     display: none;
-}
-
-.pop-up.vidible{
-    display: block;
 }
 
 .pop-up__refresh{
