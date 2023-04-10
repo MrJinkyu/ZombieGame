@@ -12,6 +12,11 @@ const popUp = document.querySelector('.pop-up');
 const popUpMessage = document.querySelector('.pop-up__message');
 const popUpRefreshBtn = document.querySelector('.pop-up__refresh');
 
+const shotSound = new Audio('./sound/shot.mp3');
+const bgSound = new Audio('./sound/bg.mp3');
+const successSound = new Audio('./sound/success.mp3');
+const zombieSound = new Audio('./sound/zombie.mp3');
+
 let stared = false;
 let timer = undefined;
 let kill = 0;
@@ -46,9 +51,11 @@ function start(){
     stopGameBtn();
     startGameTimer();
     showGameBtn();
+    playSound(bgSound);
 }
 
 function stop(){
+    stopSound(bgSound);
     stared = false;
     hideGameBtn();
     showPopUpWithText('Replay❓');
@@ -56,13 +63,16 @@ function stop(){
 }
 
 function finish(win){
+    stopSound(bgSound);
     stared = false;
     stopGameTimer();
     hideGameBtn();
     if(win){
         showPopUpWithText('Mission accomplished!! ✅');
+        playSound(successSound);
     }else{
         showPopUpWithText('Mission failed..🩸');
+        playSound(zombieSound);
     }
 }
 
@@ -191,7 +201,6 @@ function hunt(e){
     if(!stared){
         return;
     }
-
     if(e.target.className === Zombie.className){
         e.target.remove();
         kill++;
@@ -201,6 +210,7 @@ function hunt(e){
             finish(true);
         }
     }else{
+        
         return ;
     }
 }
@@ -216,10 +226,28 @@ function updateScoreBoard(){
     gameScore.innerHTML = `☠️<br>${kill}/${Zombie.count*3}`;
 }
 
+function playShotSound(e){
+    if(stared && e.target.className == 'game__field' || stared && e.target.className == 'zombie'){
+        playSound(shotSound);
+    }
+}
+
 window.addEventListener('load',()=>{
     const targetRect = target.getBoundingClientRect();
     document.addEventListener('mousemove',(e)=>{
         target.style.transform = `translate(${e.clientX-targetRect.width/2}px,${e.clientY-targetRect.height/2-100}px)`;
     });
-    document.addEventListener('click',hunt);
+    document.addEventListener('click',(e)=>{
+        hunt(e);
+        playShotSound(e);
+    });
 });
+
+function playSound(sound){
+    sound.currentTime = 0;
+    sound.play();
+}
+
+function stopSound(sound){
+    sound.pause();
+}
