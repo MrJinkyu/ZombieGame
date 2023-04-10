@@ -58,7 +58,6 @@ body{
     outline: none;
     opacity: 0.8;
     font-size: 1.5rem;
-    cursor: pointer;
 }
 
 .game__btn:hover{

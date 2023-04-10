@@ -52,7 +52,6 @@ function start(){
     startGameTimer();
     showGameBtn();
     playSound(bgSound);
-    showTimerAndScore();
 }
 
 function stop(){
@@ -72,14 +71,9 @@ function finish(win){
         showPopUpWithText('Mission accomplishe🏅');
         playSound(successSound);
     }else{
-        showPopUpWithText('Mission failed🩸');
+        showPopUpWithText('Mission failed🎃');
         playSound(zombieSound);
     }
-}
-
-function showTimerAndScore(){
-    gameTimer.style.visibility = 'visible';
-    gameScore.style.visibility = 'visible';
 }
 
 function HidePopUp(){

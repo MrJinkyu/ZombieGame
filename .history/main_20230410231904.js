@@ -72,7 +72,7 @@ function finish(win){
         showPopUpWithText('Mission accomplishe🏅');
         playSound(successSound);
     }else{
-        showPopUpWithText('Mission failed🩸');
+        showPopUpWithText('Mission failed🎃');
         playSound(zombieSound);
     }
 }

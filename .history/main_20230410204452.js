@@ -52,7 +52,6 @@ function start(){
     startGameTimer();
     showGameBtn();
     playSound(bgSound);
-    showTimerAndScore();
 }
 
 function stop(){
@@ -69,17 +68,12 @@ function finish(win){
     stopGameTimer();
     hideGameBtn();
     if(win){
-        showPopUpWithText('Mission accomplishe🏅');
+        showPopUpWithText('Mission Accomplishe🏅');
         playSound(successSound);
     }else{
-        showPopUpWithText('Mission failed🩸');
+        showPopUpWithText('Mission Failed🎃');
         playSound(zombieSound);
     }
-}
-
-function showTimerAndScore(){
-    gameTimer.style.visibility = 'visible';
-    gameScore.style.visibility = 'visible';
 }
 
 function HidePopUp(){
@@ -240,7 +234,7 @@ function playShotSound(e){
 
 window.addEventListener('load',()=>{
     const targetRect = target.getBoundingClientRect();
-    setTimeout(hidePosterAndShowGame,1000);
+    setTimeout(hideGamePoster,4000);
     document.addEventListener('mousemove',(e)=>{
         target.style.transform = `translate(${e.clientX-targetRect.width/2}px,${e.clientY-targetRect.height/2-100}px)`;
     });
@@ -261,9 +255,6 @@ function stopSound(sound){
 
 const gamePoster = document.querySelector('.game-poster');
 
-function hidePosterAndShowGame(){
+function hideGamePoster(){
     gamePoster.style.opacity = 0;
-    game.style.opacity = 1;
 }
-
-const game = document.querySelector('.game');
