@@ -28,7 +28,7 @@ const Zombie = {
     man:'🧟‍♂️',
     boy:'🧟',
     girl:'🧟‍♀️',
-    count: 5,
+    count: 4,
 }
 
 popUpRefreshBtn.addEventListener('click',()=>{

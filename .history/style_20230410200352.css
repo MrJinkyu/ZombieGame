@@ -6,7 +6,7 @@
 
 body{
     background-color: black;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .game{
@@ -17,20 +17,13 @@ body{
     border-radius: 1rem;
     margin: 100px auto;
     overflow: hidden;
+    display: none;
 }
 
 .game-poster{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-60%);
+    display: flex;
     width: 30rem;
     height: 30rem;
-    transition: all 300ms linear;
-    pointer-events: none;
-    user-select: none;
-    z-index: 1;
-    opacity: 1;
 }
 
 .game__target{

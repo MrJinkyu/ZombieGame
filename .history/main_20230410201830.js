@@ -28,7 +28,7 @@ const Zombie = {
     man:'🧟‍♂️',
     boy:'🧟',
     girl:'🧟‍♀️',
-    count: 5,
+    count: 3,
 }
 
 popUpRefreshBtn.addEventListener('click',()=>{
@@ -68,10 +68,10 @@ function finish(win){
     stopGameTimer();
     hideGameBtn();
     if(win){
-        showPopUpWithText('Mission accomplishe🏅');
+        showPopUpWithText('Mission accomplished!! ✅');
         playSound(successSound);
     }else{
-        showPopUpWithText('Mission failed🎃');
+        showPopUpWithText('Mission failed..🩸');
         playSound(zombieSound);
     }
 }
@@ -234,7 +234,7 @@ function playShotSound(e){
 
 window.addEventListener('load',()=>{
     const targetRect = target.getBoundingClientRect();
-    setTimeout(hideGamePoster,4000);
+    setTimeout(hideGamePoster,2000);
     document.addEventListener('mousemove',(e)=>{
         target.style.transform = `translate(${e.clientX-targetRect.width/2}px,${e.clientY-targetRect.height/2-100}px)`;
     });
@@ -256,5 +256,5 @@ function stopSound(sound){
 const gamePoster = document.querySelector('.game-poster');
 
 function hideGamePoster(){
-    gamePoster.style.opacity = 0;
+    gamePoster.style.display = 'none';
 }
